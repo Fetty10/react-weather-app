@@ -7,44 +7,57 @@ export default function Weather() {
   let humidity = 87;
   let wind = 7.2;
   return (
-    <div className="Weather">
-      <header>
-        <form>
-          <input
-            type="search"
-            placeholder="Enter a city.."
-            required
-            className="search-input"
-          />
-          <input type="submit" value="Search" className="search-button" />
-        </form>
-      </header>
-      <main>
-        <div className="current-weather">
-          <div>
-            <h1 className="current-city">{currentCity}</h1>
-            <p className="current-details">
-              <span>Last Updated:</span> {date} <br />
-              <span></span>
-              {description} <br />
-              Humidity: <strong>{humidity}%</strong>, Wind:{" "}
-              <strong>{wind}km/h</strong>
-            </p>
+    <div className="Container">
+      <div className="Weather">
+        <header>
+          <form>
+            <input
+              type="search"
+              placeholder="Enter a city.."
+              required
+              className="search-input"
+            />
+            <input type="submit" value="Search" className="search-button" />
+          </form>
+        </header>
+        <main>
+          <div className="current-weather">
+            <div>
+              <h1 className="current-city">{currentCity}</h1>
+              <p className="current-details">
+                <span>Last Updated:</span> {date} <br />
+                <span></span>
+                {description} <br />
+                Humidity: <strong>{humidity}%</strong>, Wind:{" "}
+                <strong>{wind}km/h</strong>
+              </p>
+            </div>
+            <div className="current-temperature">
+              <span className="current-temperature-icon">☀️</span>
+              <span
+                className="current-temperature-value"
+                id="current-temperature-value"
+              >
+                24
+              </span>
+              <span className="current-temperature-unit">
+                <a href="/">°C</a> | <a href="/">°F</a>
+              </span>
+            </div>
           </div>
-          <div className="current-temperature">
-            <span className="current-temperature-icon">☀️</span>
-            <span
-              className="current-temperature-value"
-              id="current-temperature-value"
-            >
-              24
-            </span>
-            <span className="current-temperature-unit">
-              <a href="/">°C</a> | <a href="/">°F</a>
-            </span>
-          </div>
-        </div>
-      </main>
+        </main>
+      </div>
+      <footer>
+        This project was coded by <a href="https://github.com/Fetty10">Fetty</a>
+        , and{" "}
+        <a href="https://github.com/Fetty10/react-weather-app">
+          open-sourced on GitHub
+        </a>{" "}
+        and{" "}
+        <a href="https://fetty-react-weather-app.netlify.app/">
+          hosted on Netlify
+        </a>
+      </footer>
     </div>
   );
 }
